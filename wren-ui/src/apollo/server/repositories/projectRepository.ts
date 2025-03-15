@@ -61,10 +61,11 @@ export interface TRINO_CONNECTION_INFO {
 
 export interface SNOWFLAKE_CONNECTION_INFO {
   user: string;
-  password: string;
   account: string;
   database: string;
   schema: string;
+  warehouse: string;
+  authenticator: string;
 }
 
 export interface DUCKDB_CONNECTION_INFO {

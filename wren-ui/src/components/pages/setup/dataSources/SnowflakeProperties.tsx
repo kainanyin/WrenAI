@@ -37,19 +37,6 @@ export default function SnowflakeProperties(props: Props) {
         <Input />
       </Form.Item>
       <Form.Item
-        label="Password"
-        name="password"
-        required
-        rules={[
-          {
-            required: true,
-            message: ERROR_TEXTS.CONNECTION.PASSWORD.REQUIRED,
-          },
-        ]}
-      >
-        <Input.Password placeholder="input password" />
-      </Form.Item>
-      <Form.Item
         label="Account"
         name="account"
         required
@@ -86,6 +73,19 @@ export default function SnowflakeProperties(props: Props) {
           {
             required: true,
             message: ERROR_TEXTS.CONNECTION.SCHEMA.REQUIRED,
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+      <Form.Item
+        label="Warehouse"
+        name="warehouse"
+        required
+        rules={[
+          {
+            required: true,
+            message: ERROR_TEXTS.CONNECTION.WAREHOUSE.REQUIRED,
           },
         ]}
       >

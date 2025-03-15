@@ -57,10 +57,11 @@ export interface IbisTrinoConnectionInfo {
 
 export interface IbisSnowflakeConnectionInfo {
   user: string;
-  password: string;
   account: string;
   database: string;
   schema: string;
+  warehouse: string;
+  authenticator: string;
 }
 
 export type IbisConnectionInfo =

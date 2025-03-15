@@ -84,10 +84,11 @@ describe('IbisAdaptor', () => {
 
   const mockSnowflakeConnectionInfo: SNOWFLAKE_CONNECTION_INFO = {
     user: 'my-user',
-    password: 'my-password',
     account: 'my-account',
     database: 'my-database',
     schema: 'my-schema',
+    warehouse: 'my-warehouse',
+    authenticator: 'externalbrowser'
   };
 
   const mockManifest: Manifest = {
@@ -278,9 +279,9 @@ describe('IbisAdaptor', () => {
     const mockResponse = { data: [] };
     mockedAxios.post.mockResolvedValue(mockResponse);
     // mock decrypt method in Encryptor to return the same password
-    mockedEncryptor.prototype.decrypt.mockReturnValue(
-      JSON.stringify({ password: mockSnowflakeConnectionInfo.password }),
-    );
+    //mockedEncryptor.prototype.decrypt.mockReturnValue(
+    //  JSON.stringify({ password: mockSnowflakeConnectionInfo.password }),
+    //);
 
     const result = await ibisAdaptor.getConstraints(
       DataSourceName.SNOWFLAKE,

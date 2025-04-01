@@ -254,9 +254,9 @@ const dataSource = {
         DataSourceName.SNOWFLAKE,
         connectionInfo,
       );
-      const { user, account, database, schema, warehouse } =
+      const { user, account, database, schema, warehouse, authenticator } =
         decryptedConnectionInfo as SNOWFLAKE_CONNECTION_INFO;
-      return { user, account, database, schema, warehouse };
+      return { user, account, database, schema, warehouse, authenticator };
     },
   } as IDataSourceConnectionInfo<
     SNOWFLAKE_CONNECTION_INFO,
